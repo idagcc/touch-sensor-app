@@ -1,0 +1,31 @@
+{
+  "name": "touch-sensor-player",
+  "productName": "Touch Player",
+  "version": "1.3.0",
+  "description": "Arduino-controlled two-video player for Windows",
+  "author": "IDA GCC",
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "src/main.cjs",
+  "scripts": {
+    "prestart": "npm run prepare:data",
+    "start": "electron .",
+    "test": "node --test test/*.test.cjs",
+    "prepare:data": "node scripts/prepare-data.cjs",
+    "dist:win": "npm run prepare:data && electron-builder --win nsis zip --x64 --publish never",
+    "presmoke": "npm run prepare:data",
+    "smoke": "electron . --smoke-test"
+  },
+  "dependencies": { "serialport": "13.0.0" },
+  "devDependencies": { "electron": "45.0.0", "electron-builder": "26.18.0" },
+  "build": {
+    "appId": "com.idagcc.touchplayer",
+    "asar": true,
+    "npmRebuild": false,
+    "directories": { "output": "release" },
+    "files": ["src/**/*", "package.json"],
+    "extraResources": [{ "from": "data", "to": "DefaultData" }],
+    "win": { "target": ["nsis", "zip"], "signAndEditExecutable": false, "artifactName": "TouchPlayer-Windows-${version}-${arch}.${ext}" },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true, "perMachine": false, "createDesktopShortcut": true, "artifactName": "TouchPlayer-Windows-Setup-${version}-${arch}.${ext}" }
+  }
+}

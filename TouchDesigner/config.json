@@ -1,0 +1,26 @@
+{
+  "serial": {
+    "port": "",
+    "baudRate": 9600,
+    "autoConnect": true,
+    "debounceMs": 180,
+    "startupDelayMs": 2000
+  },
+  "commands": {
+    "0": "toggle",
+    "1": "reset"
+  },
+  "output": {
+    "width": 2560,
+    "height": 1280,
+    "display": 0,
+    "scale": "fit",
+    "openOnLaunch": false
+  },
+  "videos": {
+    "holdingFolder": "media/holding",
+    "playbackFolder": "media/playback",
+    "endBehavior": "holding",
+    "volume": 1.0
+  }
+}

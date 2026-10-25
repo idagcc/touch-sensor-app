@@ -1,0 +1,13 @@
+const fs = require('node:fs');
+const path = require('node:path');
+const root = path.join(__dirname, '..');
+const source = path.join(root, '..', 'Touch Player Data');
+fs.rmSync(path.join(root, 'data'), { recursive: true, force: true });
+fs.cpSync(source, path.join(root, 'data'), { recursive: true });
+const file = path.join(root, 'data', 'config.json');
+const config = JSON.parse(fs.readFileSync(file, 'utf8'));
+config.serial.port = '';
+delete config.serial.deviceIdentity;
+config.commands = { '0': 'toggle', '1': 'reset' };
+config.output.displayID = 0;
+fs.writeFileSync(file, JSON.stringify(config, null, 2) + '\n');

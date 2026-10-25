@@ -1,0 +1,32 @@
+{
+  "serial": {
+    "port": "",
+    "baudRate": 9600,
+    "autoConnect": true,
+    "framing": "newline",
+    "debounceMs": 180,
+    "startupDelayMs": 2000,
+    "reconnectInitialDelayMs": 500,
+    "reconnectMaxDelayMs": 10000,
+    "heartbeatTimeoutMs": 0
+  },
+  "commands": {
+    "0": "toggle",
+    "1": "reset"
+  },
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "displayID": 0,
+    "scale": "fit",
+    "openOnLaunch": false,
+    "fullscreenOnLaunch": false
+  },
+  "videos": {
+    "holdingFolder": "media/holding",
+    "playbackFolder": "media/playback",
+    "endBehavior": "holding",
+    "muteHolding": true,
+    "volume": 1.0
+  }
+}

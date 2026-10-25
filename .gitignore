@@ -1,0 +1,14 @@
+.build/
+.swiftpm/
+.DS_Store
+dist/
+*.log
+node_modules/
+Windows/release/
+Windows/data/
+__pycache__/
+*.pyc
+TouchDesigner/development/
+TouchDesigner/*.1.toe
+TouchDesigner/*-Package.zip
+TouchDesigner/verification.json
